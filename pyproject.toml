@@ -1,0 +1,9 @@
+[project]
+name = "data-analyst-agent"
+version = "0.1.0"
+description = "Natural-language (Arabic/English) to SQL agent with safety guardrails and self-correction."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
