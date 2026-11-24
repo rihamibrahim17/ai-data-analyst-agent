@@ -7,7 +7,9 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
+from data_analyst.config import Settings  # noqa: E402
 from data_analyst.factory import get_agent  # noqa: E402
+from data_analyst.sample_data import create_sample_db  # noqa: E402
 
 st.set_page_config(page_title="AI Data Analyst", page_icon="📊", layout="wide")
 st.markdown("<style>.stMarkdown p {unicode-bidi: plaintext; text-align: start;}</style>", unsafe_allow_html=True)
@@ -15,6 +17,9 @@ st.markdown("<style>.stMarkdown p {unicode-bidi: plaintext; text-align: start;}<
 
 @st.cache_resource
 def load_agent():
+    db_path = Settings.from_env().db_path
+    if not db_path.exists():  # fresh server (e.g. cloud demo): create the sample database
+        create_sample_db(db_path)
     return get_agent()
 
 
