@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DEFAULT_CHAT_MODELS = {"gemini": "gemini-2.5-flash", "openai": "gpt-4o-mini"}
+DEFAULT_CHAT_MODELS = {"gemini": "gemini-3.8-flash", "openai": "gpt-4o-mini"}
 
 
 @dataclass(frozen=True)

@@ -13,7 +13,8 @@ def get_llm(settings: Settings):
         return ChatOpenAI(model=settings.chat_model, temperature=0)
     from langchain_google_genai import ChatGoogleGenerativeAI  # reads GOOGLE_API_KEY
 
-    return ChatGoogleGenerativeAI(model=settings.chat_model, temperature=0)
+    # No temperature here: Gemini 3 models are meant to run with their default sampling settings.
+    return ChatGoogleGenerativeAI(model=settings.chat_model)
 
 
 def get_agent(settings: Settings | None = None) -> DataAnalystAgent:
