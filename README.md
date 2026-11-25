@@ -88,3 +88,6 @@ reports **execution accuracy** (result set equals the gold query's result set), 
 ## Tech stack
 
 Python · LangChain · Google Gemini / OpenAI · SQLite · FastAPI · Streamlit · pandas · Docker · pytest · GitHub Actions
+
+🔗 **[Live demo](https://ai-data-analyst-agent-u5hy3j83s35p94hrjcit4z.streamlit.app/
+)**
